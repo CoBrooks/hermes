@@ -12,7 +12,7 @@ const Span = struct {
     }
 };
 
-const Source = struct {
+pub const Source = struct {
     gpa: std.mem.Allocator,
     source: []const u8,
 
@@ -74,14 +74,7 @@ const Source = struct {
     }
 };
 
-const Lexer = struct {
-    gpa: std.mem.Allocator,
-    source: *const Source,
-
-    idx: usize = 0,
-};
-
-const Report = struct {
+pub const Report = struct {
     source: *const Source,
     labels: []const Label,
 
